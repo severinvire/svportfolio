@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Projects (2026)
-permalink: /projects/2026/
+title: 2026
+permalink: /projects/2026
 ---
 
 ## 2026 Projects
