@@ -1,5 +1,7 @@
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   const btn = document.getElementById('theme-toggle-btn');
+  if (!btn) return; // safety guard
+
   const body = document.body;
 
   // Check stored preference, or fallback to system preference
@@ -9,7 +11,6 @@
   if (stored !== null) {
     isDark = stored === 'true';
   } else {
-    // Respect system preference
     isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
 
@@ -29,13 +30,12 @@
     btn.textContent = nowDark ? 'Light' : 'Dark';
   });
 
-  // Optional: listen for system changes (if user hasn't manually overridden)
+  // Listen for system changes (only if user hasn't manually overridden)
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    // Only apply if user hasn't manually set a preference
     if (localStorage.getItem('darkMode') === null) {
       const systemDark = e.matches;
       body.classList.toggle('dark-mode', systemDark);
       btn.textContent = systemDark ? 'Light' : 'Dark';
     }
   });
-})();
+});
