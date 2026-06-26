@@ -21,8 +21,8 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"My Portfolio","headline":"Projects","url":"http://localhost:4000/svportfolio/projects.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/svportfolio/assets/css/style.css?v=7f575f91215e7fbbe02ee0f490a754b50602da01">
-    <link rel="stylesheet" href="/svportfolio/assets/css/dark-mode.css">
+    <link rel="stylesheet" href="/svportfolio/assets/css/style.css?v=13db83b18d4c4d085ccb5d138dddf8847e956d44">
+    <link rel="stylesheet" href="/svportfolio/assets/css/theme.css">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -89,5 +89,32 @@
     <script src="/svportfolio/assets/js/scale.fix.js"></script>
     <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">Dark</button>
     <script src="/svportfolio/assets/js/theme-toggle.js"></script>
+    <!-- KaTeX CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<!-- KaTeX JS -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<!-- Auto-convert LaTeX in markdown to rendered math -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '\\(', right: '\\)', display: false}
+        ]
+    });">
+</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+<!-- languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-arduino.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js"></script>
   </body>
 </html>

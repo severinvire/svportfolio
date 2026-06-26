@@ -1,4 +1,30 @@
-/* ===== DARK MODE OVERRIDES ===== */
+/* Light mode */
+body {
+  color: #1a1a1a !important;  /* Dark text */
+  background-color: #ffffff !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a1a !important;
+}
+
+p, li {
+  color: #1a1a1a !important;
+}
+
+strong, b {
+  color: #1a1a1a !important;
+}
+
+a {
+  color: #0366d6 !important;
+}
+
+a:hover {
+  color: #0250a3 !important;
+}
+
+/* Dark mode overrides */
 body.dark-mode {
   background-color: #1a1a1a !important;
   color: white !important;
@@ -24,6 +50,10 @@ body.dark-mode h5,
 body.dark-mode h6,
 body.dark-mode p,
 body.dark-mode li,
+body.dark-mode strong,
+body.dark-mode b,
+body.dark-mode em,
+body.dark-mode i,
 body.dark-mode .view a {
   color: #e0e0e0 !important;
 }
@@ -77,7 +107,8 @@ body.dark-mode .theme-toggle:hover {
   background: #1a1a1a;
 }
 
-/* ===== TOGGLE BUTTON – always visible ===== */
+/* Toggle button */
+
 .theme-toggle {
   position: fixed;
   top: 20px;
@@ -95,4 +126,27 @@ body.dark-mode .theme-toggle:hover {
 }
 .theme-toggle:hover {
   background: #e0e0e0;
+}
+
+/* Tables in dark mode */
+
+body.dark-mode table {
+  border-color: #444 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #444 !important;
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;  /* This makes text white/light */
+}
+
+body.dark-mode th {
+  background-color: #2a2a2a !important;  /* Slightly darker header for contrast */
+  color: #ffffff !important;  /* Table headers should be pure white */
+}
+
+body.dark-mode table {
+  border: 1px solid #555 !important;
 }

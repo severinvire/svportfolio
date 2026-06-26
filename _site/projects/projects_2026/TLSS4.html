@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Traffic Light System - Subsystem 4 | Severin Vire</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Traffic Light System - Subsystem 4" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My Portfolio" />
+<meta property="og:description" content="My Portfolio" />
+<link rel="canonical" href="http://localhost:4000/svportfolio/projects/projects_2026/TLSS4.html" />
+<meta property="og:url" content="http://localhost:4000/svportfolio/projects/projects_2026/TLSS4.html" />
+<meta property="og:site_name" content="Severin Vire" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-25T00:00:00+10:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Traffic Light System - Subsystem 4" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-25T00:00:00+10:00","datePublished":"2026-06-25T00:00:00+10:00","description":"My Portfolio","headline":"Traffic Light System - Subsystem 4","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/svportfolio/projects/projects_2026/TLSS4.html"},"url":"http://localhost:4000/svportfolio/projects/projects_2026/TLSS4.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/svportfolio/assets/css/style.css?v=13db83b18d4c4d085ccb5d138dddf8847e956d44">
+    <link rel="stylesheet" href="/svportfolio/assets/css/theme.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/svportfolio/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <!-- Prevent white flash on dark mode -->
+    <script>
+      (function() {
+        try {
+          if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/svportfolio/">Severin Vire</a></h1>
+        
+        <p>My Portfolio</p>
+        
+          <p class="view"><a href="https://github.com/severinvire/svportfolio">View the Project on GitHub <small>severinvire/svportfolio</small></a></p>
+        
+        
+        
+      </header>
+      <section>
+        
+<div style="margin-bottom: 20px; padding: 10px 0; font-size: 0.9em; border-bottom: 1px solid #ddd;">
+  <a href="/svportfolio/">Home</a>
+
+  
+  
+    
+      <span style="margin: 0 8px;">›</span>
+      
+      <a href="/svportfolio/projects">
+        Projects
+      </a>
+    
+  
+    
+      <span style="margin: 0 8px;">›</span>
+      
+      <a href="/svportfolio/projects/projects_2026">
+        Projects_2026
+      </a>
+    
+  
+    
+      <span style="margin: 0 8px;">›</span>
+      <span>Traffic light system   subsystem 4</span>
+    
+  
+</div>
+        <h2 id="traffic-light-system---subsystem-4">Traffic Light System - Subsystem 4</h2>
+
+<h3 id="project-snapshot">Project Snapshot</h3>
+
+<ul>
+  <li><strong>Date:</strong> June 25</li>
+  <li><strong>Duration:</strong> 3 months</li>
+  <li><strong>Type:</strong> Team Project</li>
+  <li><strong>My role:</strong> Sole developer of Subsystem 4 (Tunnel Height Detection)</li>
+  <li><strong>My contribution:</strong>
+    <ul>
+      <li>Sketched wiring schematics for different sections of Subsystem 4, including two HC-SR04 sensors, 556 timer, traffic light (TL3), and warning lights (WL2)</li>
+      <li>Wrote Python script to sequentially poll both sensors (trig/echo on GPIO 2-5), compute absolute delta, set LED statuses in TL3 and WL2 based on user-defined CLI threshold (mapped to cm via 30/x scaling). Handled ValueError on input and accepted KeyboardInterrupt to reset GPIO to low before board.shutdown()</li>
+      <li>Calculated LEDs flashing interval using a 556 timer with appropriate resistance and capacitance (R/C) values</li>
+      <li>Hands-on circuit building, repeated testing, and solo wire stripping</li>
+    </ul>
+  </li>
+  <li><strong>Key Skills:</strong>
+    <ul>
+      <li>Circuit schematic design (Draw.io)</li>
+      <li>Python (Pymata4, error handling, sequential polling with interfacing HC-SR04 ultrasonic sensors)</li>
+      <li>555/556 timer R/C value calculation</li>
+      <li>Hardware testing and rebuilding to simplify circuit structure</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="index">Index</h3>
+
+<ol>
+  <li><a href="#1-context">Context</a></li>
+  <li><a href="#2-planning">Planning</a></li>
+  <li><a href="#3-building">Building</a></li>
+  <li><a href="#4-testing">Testing</a></li>
+  <li><a href="#5-challenges">Challenges</a></li>
+  <li><a href="#6-reflection">Reflection</a></li>
+  <li><a href="#7-future-work">Future Work</a></li>
+  <li><a href="#8-technical-stack">Technical Stack</a></li>
+  <li><a href="#12-acknowledgement">Acknowledgement</a></li>
+</ol>
+
+<hr />
+<h3 id="1-context">1. Context:</h3>
+
+<p>ENG1013’s Traffic Light System Project (TLSP) focused on working in a small team to reproduce and simulate a real-world, UK-based traffic light system using the unit’s provided electrical kits. The project aimed to address the complex traffic network in the UK while providing a challenging opportunity to teamwork collaboration and conflict resolution. TLSP was completed within 3 months.</p>
+
+<p>The system comprised five subsystems, each with required, general, and integration features. My responsibility was to design and build Subsystem 4, an over-height detection system at the tunnel entrance, consisting of ultrasonic sensors (US3/US4), a traffic light (TL3), and two sets of red warning lights (WL2).</p>
+
+<h3 id="2-planning">2. Planning:</h3>
+
+<p><strong>My subsystem had the following features:</strong></p>
+
+<ul>
+  <li>Upon detection of an overweight vehicle by US3, TL3 turns from green to red immediately. The system resets only when no over-height vehicle is detected.</li>
+  <li>US4 verifies US3 readings within an acceptable error range (3 cm).</li>
+  <li>On startup, the user is prompted for an overweight limit (default 4.0 m), used as a variable throughout the subsystem.</li>
+  <li>WL2 flashing pattern XOXO/OXOX with flashing frequency generated by a 556 timer.</li>
+</ul>
+
+<p><strong>Total time:</strong></p>
+
+<p>The following tasks include the estimated time for researching, testing, redesigning, and rebuilding over the course of 3 months.</p>
+
+<ul>
+  <li>Circuit design (Draw.io): 10 hours</li>
+  <li>Python script: 15 hours</li>
+  <li>Physical circuit building: 20 hours</li>
+</ul>
+
+<p><strong>Resource Allocation:</strong></p>
+
+<ul>
+  <li>Hardware: HC-SR04 sensors (×2), 556 timer, resistors (10 kΩ, 330 Ω), capacitor (10 µF), red/green LEDs, BS170 NMOS transistor, breadboard, solid-core wire</li>
+  <li>Software: VSCode, Python 3.13 with Pymata4, Arduino library FirmataExpress</li>
+</ul>
+
+<p><strong>Risk Assessment:</strong></p>
+
+<ul>
+  <li>LEDs blowing up: Likely. This was mitigated by pre-calculating resistance values from the schematic sketches before testing on a physical circuit.</li>
+  <li>Overheating the 556 timer: Low. Input voltage was a maximum of 5 V.</li>
+  <li>Damage to the capacitor: Low. I ensured capacitor’s terminals were properly connected and capacitance value was not below 10 µF.</li>
+  <li>Wire stripping injury: High. Wearing lab-standard glasses helped prevent wires from causing eye injuries.</li>
+</ul>
+
+<h3 id="3-building">3. Building:</h3>
+
+<p><strong>Hardware:</strong></p>
+
+<p>The WL2 warning light circuit required alternating flashing of four red LEDs in an XOXO/OXOX pattern. I used Timer B of the 556 timer (pins 7-14) configured in astable mode. The timing components were:</p>
+
+<ul>
+  <li>$R_3$ = 10 kΩ ($R_A$)</li>
+  <li>$R_4$ + $R_5$ = 20 kΩ ($R_B$)</li>
+  <li>$C_1$ = 10 µF</li>
+</ul>
+
+<p><strong>Period calculation:</strong></p>
+
+<p>T = 0.693 × ($R_A$ + 2$R_B$) × C = 0.693 × (10000 + 40000) × 10 × $10^{-6}$ = 0.3465 s</p>
+
+<p><strong>Software:</strong></p>
+
+<p>The Python script sequentially polled US3 and US4, measured distances, computed the absolute error, and controlled TL3 and WL2 based on the configured threshold. Key design decisions:</p>
+
+<ol>
+  <li>Sequential polling to avoid ultrasonic interference</li>
+  <li>50ms delay between sensor readings for stable measurements</li>
+  <li>Error range check before triggering red lights</li>
+  <li>On KeyboardInterrupt, all pins set LOW before <code class="language-plaintext highlighter-rouge">board.shutdown()</code></li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">distanceUS3</span> <span class="o">&lt;</span> <span class="n">overLC</span> <span class="ow">and</span> <span class="n">errorRange</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">digital_write</span><span class="p">(</span><span class="n">greenTL3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">digital_write</span><span class="p">(</span><span class="n">redWL2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">digital_write</span><span class="p">(</span><span class="n">redTL3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">distanceUS3</span> <span class="o">&gt;=</span> <span class="n">overLC</span><span class="p">:</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">digital_write</span><span class="p">(</span><span class="n">redTL3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">digital_write</span><span class="p">(</span><span class="n">redWL2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">digital_write</span><span class="p">(</span><span class="n">greenTL3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><em>Note that distanceUS3 is the distance measured between the top of the vehicle and the ultrasonic sensor located above it, and overLC after sizing becomes the minimum gap.</em></p>
+<h3 id="4-testing">4. Testing:</h3>
+
+<p><strong>Software:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test case</th>
+      <th>Expected Result</th>
+      <th>Actual Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enter “4.0” at startup</td>
+      <td>overLC = 7.5 cm</td>
+      <td>Passed</td>
+    </tr>
+    <tr>
+      <td>Enter “” at startup</td>
+      <td>Default overLC = 7.5 cm</td>
+      <td>Passed</td>
+    </tr>
+    <tr>
+      <td>Enter “abc” at startup</td>
+      <td>Error message, re-prompt</td>
+      <td>Passed</td>
+    </tr>
+    <tr>
+      <td>US3 &lt; overLC, US4 within ±3 cm</td>
+      <td>TL3 red, WL2 flashing</td>
+      <td>Passed</td>
+    </tr>
+    <tr>
+      <td>US3 ≥ overLC</td>
+      <td>TL3 green, WL2 off</td>
+      <td>Passed</td>
+    </tr>
+    <tr>
+      <td>US3 &lt; overLC, US4 error &gt;3 cm</td>
+      <td>No trigger</td>
+      <td>Passed</td>
+    </tr>
+    <tr>
+      <td>KeyboardInterrupt</td>
+      <td>All pins LOW, clean exit</td>
+      <td>Passed</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Hardware:</strong></p>
+
+<p>All LEDs in WL2 (GPIO 8) illuminated simultaneously instead of alternating.</p>
+<h3 id="5-challenges">5. Challenges:</h3>
+
+<p>In WL2 subcircuit, a 556 timer was intended to generate flashing lights in patterns XOXO/OXOX alternately using four red LEDs, which were arranged in two parallel pairs across two separate branches. However, upon power-up, all LEDs illuminated simultaneously at an approximately equal brightness.</p>
+
+<p><strong>Investigation:</strong></p>
+
+<ol>
+  <li>Checked the values of resistors and capacitor connected to the 556 timer:
+  - For $R_A$ = $R_3$ and $R_B$ = $R_4$ + $R_5$, their values were $R_3$ = $R_4$ = $R_5$ = 10 kΩ, and $C_1$ = 10 μF, therefore period = 0.3465 s, which was sufficient to produce visible flashing.
+  - The 556 timer section was reviewed and confirmed that it was correctly connected to the positive and negative rails.
+  - The WL2 section was analysed, and it was identified that both parallel branches had an identical configuration. This was therefore the root cause.</li>
+</ol>
+
+<p><img src="556_timer.png" alt="556 timer" /></p>
+
+<p style="font-size:0.9em; color:#4d4d4d; font-style:italic; text-align:center;">The configuration of the 556 timer ($U_3$) with resistors $R_3$, $R_4$, $R_5$ and capacitor $C_1$.</p>
+<p><strong>Root Cause:</strong></p>
+
+<p>Each branch of WL2 consisted of two identically configured “LED + resistor” strings connected in parallel. Each red LED was labelled with D- and each resistor (330 Ω) was labelled with R-.</p>
+
+<ul>
+  <li>
+    <p>Branch 1: Output → ($D_4$ + $R_7$) // ($D_6$ + $R_9$) → GND</p>
+  </li>
+  <li>
+    <p>Branch 2: Output → ($D_3$ + $R_6$) // ($D_5$ + $R_8$) → GND</p>
+  </li>
+</ul>
+
+<p>During charging of the capacitor ($C_1$), the lower comparator (inside Timer B of 556 timer) output HIGH to input S of flip-flop, thus state of Q = HIGH, signaling to the Output Driver behind the Output pin to open the path for the current.</p>
+
+<p>Since both branches shared the same nodes at both ends (between Output pin and GND), all the LEDs illuminated simultaneously.</p>
+
+<p><img src="" alt="555 timer" /></p>
+
+<p style="font-size:0.9em; color:#4d4d4d; font-style:italic; text-align:center;">Internal block diagram of a 555 timer (Timer A/B of the 556). Reproduced from Horowitz &amp; Hill, *The Art of Electronics*, 3rd ed., 2015, p. 428.</p>
+
+<p><strong>Fix #1:</strong></p>
+
+<ol>
+  <li><strong>Swapped the positions of each of the LEDs and their adjacent resistors in branch 2.</strong></li>
+  <li><strong>Disconnected branch 2 to GND and reconnected to positive rail (5 V).</strong></li>
+</ol>
+
+<p>As the voltage in $C_1$ crossed 2/3 of 5 V, discharging started, Q went LOW, signaling the Output Driver to block the path between 5V and Output, and open the path between GND and Output. Current then flowed from the 5 V rail into Branch 2, turning on its LEDs, then continued into the Output pin to ground. Branch 1 was turned off since both sides equaled 0 V; thus, current = 0 A.</p>
+
+<p>However, since the internal transistor inside the Output Driver still needed a small voltage to turn on and pulled the Output pin low, there was a voltage residue that remained relative to ground, leading to a dim light in $D_4$ and $D_6$.</p>
+
+<p><strong>Fix #2:</strong></p>
+
+<ol>
+  <li><strong>Connected an NMOS transistor (BS170) to branch 1</strong>.</li>
+</ol>
+
+<p>This solved the light dimming issue by using the transistor’s threshold voltage (~2.0 V) to block the current path; therefore, when the node voltages in both sides were identical (5 V), the voltage difference equaled 0 V, current was 0 A. As a result, the $D_4$ and $D_6$ turned off.</p>
+
+<p><img src="WL.png" alt="WL2 subcircuit" /></p>
+
+<p style="font-size:0.9em; color:#4d4d4d; font-style:italic; text-align:center;">Final configuration of the WL2 subcircuit with the NMOS transistor (BS170).</p>
+<p><strong>Lesson:</strong></p>
+
+<ul>
+  <li>LEDs only blink alternately when they are configured in such a way that the flow of current is opposite.</li>
+  <li>Adding an NMOS transistor can block the current path if the gate-source voltage is below the threshold voltage.</li>
+</ul>
+
+<h3 id="6-reflection">6. Reflection</h3>
+
+<p><strong>What went well:</strong></p>
+
+<ul>
+  <li>Systematic debugging: The parallel LED issue was resolved through methodical investigation by checking timing components first, then timer connections, then branch configuration.</li>
+  <li>Clean code structure: The Python script handles errors smoothly (ValueError, TypeError) and shuts down on KeyboardInterrupt as expected.</li>
+  <li>Hardware understanding: Building the 556 timer circuit from first principles deepened my understanding of astable multivibrators, comparators, and flip-flops.</li>
+  <li>Time management: Required features were completed ahead of schedule, allowing time for general features and debugging.</li>
+</ul>
+
+<p><strong>What I would do differently:</strong></p>
+
+<ol>
+  <li>Test WL2 subcircuit by simulating it first. Using an online 3D modelling program such as TinkerCad would have revealed the oscillation frequency earlier.</li>
+  <li>Review branch configurations carefully before implementation.</li>
+</ol>
+
+<p><strong>What I learned:</strong></p>
+
+<ul>
+  <li>The internal architecture of 555 timer (in 556), which includes comparators, flip-flop, discharge transistor, and how it generates square waves.</li>
+  <li>How to calculate:
+    <ul>
+      <li>Oscillation period: T = 0.693 × ($R_A$ + 2$R_B$) × C</li>
+      <li>Oscillation frequency: f = 1.44 / (($R_A$ + 2$R_B$) × C)</li>
+    </ul>
+  </li>
+  <li>The importance of threshold voltages in MOSFETs for blocking unwanted current</li>
+  <li>Sequential polling for ultrasonic sensors to avoid interference</li>
+  <li>Clean error handling in embedded Python applications</li>
+</ul>
+
+<p><strong>How this influenced me:</strong></p>
+
+<p>This project reinforced that engineering is as much about debugging as it is about building functional systems. The parallel LED issue taught me to plan and test before incorporating WL2 into Subsystem 4, as well as the patience to look into details and analyse imperfections logically from a more skeptical perspective.</p>
+
+<h3 id="7-future-work">7. Future Work</h3>
+
+<p>This TLSP greatly inspired me to consider potential future simulations of smart systems on a macro level, such as global and space telecommunication networks, and airspace traffic management systems for safe flying vehicles.</p>
+
+<h3 id="8-technical-stack">8. Technical Stack</h3>
+
+<ul>
+  <li>CAD: Draw.io</li>
+  <li>Programming: Python 3.13, Pymata4</li>
+  <li>Hardware: Arduino Uno, HC-SR04, 556 timer, BS170 NMOS</li>
+  <li>Others: VSCode</li>
+</ul>
+
+<h3 id="9-acknowledgement">9. Acknowledgement</h3>
+
+<p><strong>Sources</strong>: Horowitz &amp; Hill, <em>The Art of Electronics</em>, 3rd ed., 2015, p. 428 (555 timer internal block diagram reference)</p>
+
+<p><strong>Tools</strong>: <a href="https://draw.io/">Draw.io</a> for circuit schematics, VSCode for development</p>
+
+<p><strong>Support</strong>: I would like to acknowledge the valuable contributions of my teammates, teaching assistants, and lecturers in this unit.</p>
+
+<hr />
+<p><strong>AI Acknowledgment:</strong> This portfolio entry was developed with the assistance of Gemini for structuring, grammar refinement, and clarity improvements. All technical content, circuit designs, code, and debugging insights are my own original work.</p>
+
+      </section>
+      <footer>
+        <div style="position: relative; top: 30px;">
+          <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        </div>
+      </footer>
+    </div>
+    <script src="/svportfolio/assets/js/scale.fix.js"></script>
+    <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">Dark</button>
+    <script src="/svportfolio/assets/js/theme-toggle.js"></script>
+    <!-- KaTeX CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<!-- KaTeX JS -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<!-- Auto-convert LaTeX in markdown to rendered math -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '\\(', right: '\\)', display: false}
+        ]
+    });">
+</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+<!-- languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-arduino.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js"></script>
+  </body>
+</html>

@@ -5,14 +5,15 @@ description: My Portfolio
 url: "https://severinvire.github.io"
 baseurl: "/svportfolio" 
 
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-
-# Default titles for pages that don't specify one
 defaults:
   - scope:
       path: ""
     values:
       title: "Severin Vire"
+
+kramdown:
+  syntax_highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
