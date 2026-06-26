@@ -26,7 +26,7 @@ The following measures are in place to ensure the security and integrity of this
 - HTTPS is enforced on the site
 - No sensitive information (API keys, credentials) is stored in this repository
 - Dependabot is enabled to alert me to security vulnerabilities in dependencies
-- JavaScript and CSS are sanitised to prevent cross-site scripting (XSS) vulnerabilities
+- This is a static site with no user-generated content, eliminating XSS and injection risks.
 
 If you discover a security vulnerability, please contact me directly at severinvire@gmail.com rather than opening a public issue.
 
