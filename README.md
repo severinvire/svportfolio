@@ -50,14 +50,3 @@ For any requests or permissions, please contact me directly at severinvire@gmail
 ## Contributing
 
 This is a personal portfolio and is not open to contributions. Feedback and suggestions are welcome via email.
-
-## Contact
-
-- LinkedIn: [https://www.linkedin.com/in/severin-vire-001439374/](https://www.linkedin.com/in/severin-vire-001439374/)
-- Email: [severinvire@gmail.com](mailto:severinvire@gmail.com)
-
-## Author
-
-**Severin Vire**  
-First-year Engineering Student  
-Monash University (2026)
