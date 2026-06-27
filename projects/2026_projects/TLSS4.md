@@ -220,8 +220,6 @@ This TLSP greatly inspired me to consider potential future simulations of smart 
 
 ### 9. Acknowledgement
 
-**Sources**: Horowitz & Hill, _The Art of Electronics_, 3rd ed., 2015, p. 428 (555 timer internal block diagram reference)
-
 **Tools**: [Draw.io](https://draw.io/) for circuit schematics, VSCode for development
 
 **Support**: My teammates, teaching assistants, and lecturers in this unit.
