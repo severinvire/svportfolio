@@ -1,5 +1,5 @@
-### About Portfolio
-Source code for my personal portfolio site. This is a personal project, not an open-source project, and I’m not accepting contributions. Please use it for reference and inspiration only; no reuse, modification, or redistribution without permission.
+### About This Repository
+This repository serves as the source code for my personal portfolio site. This is a personal project, not an open-source project, and I’m not accepting contributions. Please use it for reference and inspiration only; no reuse, modification, or redistribution without permission.
 
 ### Technologies
 Jekyll, HTML/CSS/JavaScript, KaTeX, Prism.js, Liquid.
